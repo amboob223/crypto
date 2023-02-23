@@ -1,0 +1,53 @@
+body {
+    background-color: black;
+}
+
+label {
+    color: white;
+    margin-right: 10px;
+}
+
+.strong {
+    display: flex;
+    justify-content: center;
+}
+
+#btn {
+    background-color: goldenrod;
+    color: black;
+}
+
+.form {
+    display: flex;
+    justify-content: center;
+
+}
+
+.mid {
+    display: flex;
+    justify-content: center;
+}
+
+.form-groupp {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.con {
+    display: flex;
+    text-align: center;
+
+}
+
+.list-group {
+    width: 50%;
+}
+
+.inner {
+    display: flex;
+    justify-content: center;
+}
+
+.width {
+    width: 50px;
+}
