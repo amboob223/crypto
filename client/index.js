@@ -5,8 +5,12 @@ const amount = document.getElementById("amount");
 const description = document.getElementById("description");
 const sector = document.getElementById("sector");
 const getall = document.getElementById("all");
+const deleteall = document.getElementById("deleteall");
 const list = document.getElementById("ulist");
 const tbody = document.getElementById("tbody");
+
+
+//add a todo
 
 button.addEventListener("click", async () => {
     try {
@@ -40,11 +44,15 @@ button.addEventListener("click", async () => {
     }
 })
 
+//getting all the data
 getall.addEventListener("click", async () => {
 
     try {
+        tbody.innerHTML = ""
         const response = await fetch("http://localhost:5000/crypto");
         const allinfo = await response.json()// adding the await here give diffrence
+
+
         console.log(allinfo.map((data) => {
             const row = document.createElement("tr");
             const id = document.createElement("th");
@@ -74,12 +82,23 @@ getall.addEventListener("click", async () => {
             row.appendChild(sector)
 
             tbody.appendChild(row)
-
-
-
         }))
 
     } catch (error) {
         console.log(error)
     }
 })
+
+deleteall.addEventListener("click", async () => {
+    try {
+        const response = await fetch("http://localhost:5000/crypto",
+            {
+                method: "DELETE"
+            })
+        console.log("wow")
+    } catch (error) {
+        console.log(error)
+    }
+})
+
+

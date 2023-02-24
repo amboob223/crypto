@@ -3,8 +3,12 @@ body {
 }
 
 label {
-    color: white;
+    color: goldenrod;
     margin-right: 10px;
+}
+
+.gld {
+    color: goldenrod;
 }
 
 .strong {

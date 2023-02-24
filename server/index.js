@@ -35,6 +35,20 @@ app.get("/crypto", async (req, res) => {
 
 })
 
+
+//deleting the data
+app.delete("/crypto", async (req, res) => {
+    try {
+
+        const deleterow = await pool.query(
+            "DELETE FROM crypto;"
+        )
+        res.json("we deleted")
+    } catch (error) {
+        console.log(error)
+    }
+})
+
 app.listen(5000, () => {
     console.log("ayee")
 })
