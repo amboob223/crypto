@@ -7,6 +7,8 @@ const sector = document.getElementById("sector");
 const getall = document.getElementById("all");
 const deleteall = document.getElementById("deleteall");
 const list = document.getElementById("ulist");
+const delu = document.getElementById("delu");
+
 const tbody = document.getElementById("tbody");
 
 
@@ -50,10 +52,10 @@ getall.addEventListener("click", async () => {
     try {
         tbody.innerHTML = ""
         const response = await fetch("http://localhost:5000/crypto");
-        const allinfo = await response.json()// adding the await here give diffrence
+        const allinfo = await response.json()// adding the await here give diffrence this is a big block of the data
 
-
-        console.log(allinfo.map((data) => {
+        //we got all ow the rest is putting it on the screen
+        allinfo.map((data) => {
             const row = document.createElement("tr");
             const id = document.createElement("th");
             const td = document.createElement("td");
@@ -81,8 +83,30 @@ getall.addEventListener("click", async () => {
             row.appendChild(description)
             row.appendChild(sector)
 
+            but = document.createElement("button")
+            but.classList.add("delu")
+            but.innerHTML = "delete"
+            row.appendChild(but)
             tbody.appendChild(row)
-        }))
+
+            //what we was doing wrong was using the wrong scope delu was defined outside of the method but we shoud use the new button we making uinstead
+            but.addEventListener("click", async () => {
+                try {
+                    const response = await fetch(`http://localhost:5000/crypto/${data.id}`,
+                        {
+                            method: "DELETE"
+                        })
+                    row.remove();
+                    console.log(data.id)
+
+                } catch (error) {
+                    console.log(error)
+                }
+
+            })
+        })
+
+
 
     } catch (error) {
         console.log(error)
@@ -99,6 +123,12 @@ deleteall.addEventListener("click", async () => {
     } catch (error) {
         console.log(error)
     }
-})
+});
+
+
+
+
+
+
 
 

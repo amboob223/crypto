@@ -36,7 +36,7 @@ app.get("/crypto", async (req, res) => {
 })
 
 
-//deleting the data
+//deleting all the data
 app.delete("/crypto", async (req, res) => {
     try {
 
@@ -48,6 +48,21 @@ app.delete("/crypto", async (req, res) => {
         console.log(error)
     }
 })
+
+//deleting one
+app.delete("/crypto/:id", async (req, res) => {
+    try {
+        const { id } = req.params; //the params gets from thr irl // we need the : above so it not string literal
+        const deleterow = await pool.query(
+            "DELETE FROM crypto WHERE id = $1",
+
+            [id]
+        );
+        res.json("item deleted")
+    } catch (error) {
+        console.log(error)
+    }
+});
 
 app.listen(5000, () => {
     console.log("ayee")
