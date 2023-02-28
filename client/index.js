@@ -25,7 +25,7 @@ button.addEventListener("click", async () => {
             sector: sector.value
         }
 
-        const response = await fetch("http:localhost:5000/crypto",
+        const response = await fetch("https://crypto-ieum.onrender.com/crypto",
             {
                 method: "POST",
                 headers: { "Content-type": "application/json" },
