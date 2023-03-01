@@ -5,9 +5,7 @@ const pool = require("./db");
 
 //we need middleware
 app.use(express.json())//we need this parser to chop up json form client to server
-app.use(cors({
-    origin: 'https://crypto-ieum.onrender.com'
-    ))// we need for working between apps
+app.use(cors())  //we need for working between apps
 
 //put info in base 
 app.post("/crypto", async (req, res) => {
