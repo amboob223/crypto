@@ -10,19 +10,7 @@ app.use(express.json())//we need this parser to chop up json form client to serv
 
 
 
-  pool.query(`
-  CREATE TABLE crypto(
-      id SERIAL PRIMARY KEY,
-      name VARCHAR(255),
-      price INTEGER,
-      amount INTEGER,
-      sector VARCHAR(255),
-      thmnth BOOLEAN DEFAULT FALSE,
-      smonth BOOLEAN DEFAULT FALSE,
-      trade  BOOLEAN DEFAULT FALSE
-  );
-  `)
-
+  
 
 
 //put info in base 
