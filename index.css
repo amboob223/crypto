@@ -1,0 +1,24 @@
+
+.dark{
+    background-color: black;
+}
+.h{
+    color:goldenrod;
+    text-align: center;
+}
+.form>input{
+    display:flex;
+}
+
+
+.outer{
+    display: flex;
+    color: goldenrod;
+    margin:5%;
+    justify-content: center;
+}
+.inner{
+    margin-right:5%;
+    display: flex;
+    justify-content: center;
+}
