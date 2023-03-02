@@ -4,8 +4,24 @@ const cors = require("cors");
 const pool = require("./db");
 
 //we need middleware
+app.use(cors())
 app.use(express.json())//we need this parser to chop up json form client to server
-app.use(cors())  //we need for working between apps
+  //we need for working between apps
+
+
+
+  pool.query(`
+  CREATE TABLE crypto(
+      id SERIAL PRIMARY KEY,
+      name VARCHAR(255),
+      price INTEGER,
+      amount INTEGER,
+      sector VARCHAR(255),
+      thmnth BOOLEAN DEFAULT FALSE,
+      smonth BOOLEAN DEFAULT FALSE,
+      trade  BOOLEAN DEFAULT FALSE
+  );
+  `)
 
 //put info in base 
 app.post("/crypto", async (req, res) => {
@@ -56,7 +72,7 @@ app.delete("/crypto/:id", async (req, res) => {
         const deleterow = await pool.query(
             "DELETE FROM crypto WHERE id = $1",
 
-            [id]
+            [id] // this connects with the query
         );
         res.json("item deleted")
     } catch (error) {
