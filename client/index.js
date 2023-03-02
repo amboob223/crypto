@@ -48,7 +48,7 @@ get.addEventListener("click", async()=>{
         tbody.innerHTML = ""
        
 
-         const response = await fetch("https://crypto-ieum.onrender.com/crypto")
+         const response = await fetch("https://crypto-ieum.onrender.com")
     const allinfo = await response.json() // so to get all the info we await so it can go if it works we fetch the data and then
        //since allinfo is an array we can map through it 
 
