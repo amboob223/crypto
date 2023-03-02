@@ -23,10 +23,14 @@ app.use(express.json())//we need this parser to chop up json form client to serv
   );
   `)
 
+
+
 //put info in base 
 app.post("/crypto", async (req, res) => {
     try {
 
+        res.header('Access-Control-Allow-Origin', 'https://criptoe.netlify.app');
+  
         const { name, price, amount, description, sector } = req.body
         const forBase = await pool.query(
             "INSERT INTO crypto(id,name,price,amount,description,sector) VALUES(nextval('crypto_id_seq'),$1,$2,$3,$4,$5) RETURNING *",
