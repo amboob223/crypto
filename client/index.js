@@ -24,7 +24,7 @@ const tbody = document.querySelector(".tbody");
             trade:trade.checked
         }
 
-        const response = await fetch("https://crypto-ieum.onrender.com/crypto",
+        const response = await fetch("https://crypto-ieum.onrender.com",
             {
                 method:"POST",
                 headers:{"Content-type":"application/json"},
