@@ -14,7 +14,7 @@ app.use(express.json())//we need this parser to chop up json form client to serv
 
 
 //put info in base 
-app.post("/crypto", async (req, res) => {
+app.post("/", async (req, res) => {
     try {
 
         res.header('Access-Control-Allow-Origin', 'https://criptoe.netlify.app');
