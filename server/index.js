@@ -31,7 +31,7 @@ app.post("/", async (req, res) => {
 });
 
 //this is the route when a get requestr get made
-app.get("/crypto", async (req, res) => {
+app.get("/", async (req, res) => {
     try {
         const allinfo = await pool.query(
             "SELECT * FROM crypto"
