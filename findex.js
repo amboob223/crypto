@@ -10,7 +10,7 @@ const trade = document.getElementById("trade");
 const tbody = document.querySelector(".tbody");
 
 
-const fetch = require('node_fetch')
+const fetch = require('node-fetch')
 
 // now we make the events when you click either button 
 
