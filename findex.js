@@ -27,7 +27,7 @@ const tbody = document.querySelector(".tbody");
             trade:trade.checked
         }
 
-        const response = await fetch("postgres://crypto_olfk_user:HB8fdNb29gXBU1Rqi6NzDUEzFBCgxjdc@dpg-cfvuvcqk728pn7u71dlg-a/crypto_olfk",
+        const response = await fetch("https://crypto-ieum.onrender.com",
             {
                 method:"POST",
                 headers:{"Content-type":"application/json"},
@@ -51,7 +51,7 @@ get.addEventListener("click", async()=>{
         tbody.innerHTML = "" // this is to wipe away the other ones 
        
 
-         const response = await fetch("postgres://crypto_olfk_user:HB8fdNb29gXBU1Rqi6NzDUEzFBCgxjdc@dpg-cfvuvcqk728pn7u71dlg-a/crypto_olfk") // we might can just try crypto depends on how it set up 
+         const response = await fetch("https://crypto-ieum.onrender.com") // we might can just try crypto depends on how it set up 
     const allinfo = await response.json() // so to get all the info we await so it can go if it works we fetch the data and then
        //since allinfo is an array we can map through it 
 
