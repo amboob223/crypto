@@ -10,6 +10,9 @@ app.use(express.json())//we need this parser to chop up json form client to serv
 
 
 
+
+
+
   pool.query(`
   CREATE TABLE crypto(
       id SERIAL PRIMARY KEY,
@@ -22,6 +25,16 @@ app.use(express.json())//we need this parser to chop up json form client to serv
       trade  BOOLEAN DEFAULT FALSE
   );
   `)
+
+const fetch = require('node-fetch');
+
+const url = "postgresql://crypto_olfk_user:HB8fdNb29gXBU1Rqi6NzDUEzFBCgxjdc@dpg-cfvuvcqk728pn7u71dlg-a:5432/crypto_olfk";
+
+fetch(url)
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch(error => console.error(error));
+
 
 
 
