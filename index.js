@@ -30,6 +30,7 @@ const fetch = require('node-fetch');
 
 const url = "postgresql://crypto_olfk_user:HB8fdNb29gXBU1Rqi6NzDUEzFBCgxjdc@dpg-cfvuvcqk728pn7u71dlg-a:5432/crypto_olfk";
 
+
 fetch(url)
   .then(response => response.json())
   .then(data => console.log(data))
