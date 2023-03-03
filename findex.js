@@ -9,6 +9,9 @@ const smonth = document.getElementById("smonth");
 const trade = document.getElementById("trade");
 const tbody = document.querySelector(".tbody");
 
+
+const fetch = require('node_fetch')
+
 // now we make the events when you click either button 
 
 //add
