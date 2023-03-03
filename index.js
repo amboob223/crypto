@@ -10,23 +10,23 @@ app.use(express.json())//we need this parser to chop up json form client to serv
 
 
 
-  pool.query(`
-  CREATE TABLE crypto(
-      id SERIAL PRIMARY KEY,
-      name VARCHAR(255),
-      price INTEGER,
-      amount INTEGER,
-      sector VARCHAR(255),
-      thmnth BOOLEAN DEFAULT FALSE,
-      smonth BOOLEAN DEFAULT FALSE,
-      trade  BOOLEAN DEFAULT FALSE
-  );
-  `)
+//   pool.query(`
+//   CREATE TABLE crypto(
+//       id SERIAL PRIMARY KEY,
+//       name VARCHAR(255),
+//       price INTEGER,
+//       amount INTEGER,
+//       sector VARCHAR(255),
+//       thmnth BOOLEAN DEFAULT FALSE,
+//       smonth BOOLEAN DEFAULT FALSE,
+//       trade  BOOLEAN DEFAULT FALSE
+//   );
+//   `)
 
 
 
 //put info in base 
-app.post("/crypto", async (req, res) => {
+app.post("/", async (req, res) => {
     try {
 
         res.header('Access-Control-Allow-Origin', 'https://criptoe.netlify.app');
@@ -84,6 +84,8 @@ app.delete("/crypto/:id", async (req, res) => {
     }
 });
 
-app.listen(5000, () => {
+const PORT = process.env.PORT || 5000
+
+app.listen(PORT, () => {
     console.log("ayee")
 })
