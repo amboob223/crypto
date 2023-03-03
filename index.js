@@ -26,7 +26,7 @@ app.use(express.json())//we need this parser to chop up json form client to serv
 
 
 //put info in base 
-app.post("/crypto", async (req, res) => {
+app.post("/", async (req, res) => {
     try {
 
         res.header('Access-Control-Allow-Origin', 'https://criptoe.netlify.app');
@@ -43,7 +43,7 @@ app.post("/crypto", async (req, res) => {
 });
 
 //this is the route when a get requestr get made
-app.get("/crypto", async (req, res) => {
+app.get("/", async (req, res) => {
     try {
         const allinfo = await pool.query(
             "SELECT * FROM crypto"
