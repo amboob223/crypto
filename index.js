@@ -84,8 +84,7 @@ app.delete("/crypto/:id", async (req, res) => {
     }
 });
 
-const PORT = process.env.PORT || 5000
 
-app.listen(PORT, () => {
+app.listen(5000, () => {
     console.log("ayee")
 })
